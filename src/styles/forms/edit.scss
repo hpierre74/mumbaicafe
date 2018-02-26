@@ -1,0 +1,35 @@
+@import "styles/helpers.scss";
+
+.editForm {
+    border: 10px solid $ai;
+    border-radius: 10px;
+    display: flex;
+    flex-grow: column;
+    background: white;
+    color:black;
+    .label {
+        
+    }
+    .textarea {
+        width: 80%;
+        padding: 2.5%;
+        margin: 1%;
+        border-radius:10px;
+    }
+    .submit {
+        display: block;
+        padding: 1%;
+        border-radius: 10px;
+        margin: 0 auto;
+        width: 15%;
+        background: $ai;
+        color: white;
+        /* font-family: Blacksword; */
+        font-size: 1em;
+        cursor: pointer;
+        &:hover{
+            background: white;
+            color:black;
+        }
+    }
+}

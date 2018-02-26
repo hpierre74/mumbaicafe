@@ -1,0 +1,39 @@
+@import 'styles/helpers.scss';
+
+.menu {
+    padding: 5% 0;
+    .title {
+        padding: 2.5%;
+    }
+    .FnB {
+        // width: 80%;
+        margin: 2.5% auto;
+        display: flex;
+        justify-content: row wrap;
+        // @media( max-width : 750px) {
+        //     width: 95%;
+        // }
+        .default-menu {
+            padding: 1.5% 1.5%;
+            font-family: "Blacksword";
+            cursor: pointer;
+            display: inline-block;
+            width: 15%;
+            border: $b1w;
+            border:0;
+            margin: 0 2.5%;
+        }
+        .active-menu {
+            padding: 1.5% 1.5%;
+            font-family: "Blacksword";
+            cursor: pointer;
+            display: inline-block;
+            width: 15%;
+            border:$b1w;
+            border:0;
+            background: white;
+            color: black;
+            margin: 0 2.5%;
+        }
+    }
+}

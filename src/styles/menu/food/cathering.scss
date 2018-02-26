@@ -1,0 +1,24 @@
+@import 'styles/helpers.scss';
+.cathering {
+    display: flex;
+    justify-content:space-around;
+    @media (max-width: 599px) {
+        flex-flow: column;
+        margin: 0 auto;
+    }
+    .cathering-offer {
+        border: $b1w;
+        border-radius: 10px;
+        margin: 2.5% auto;
+        padding: 2.5%;
+        width: 50%;
+        @media (max-width: 599px) {
+            width: 100%;
+            padding: 0;
+        }
+        .cathering-list {
+            list-style: circle;
+            text-align: left;
+        }    
+    }
+}

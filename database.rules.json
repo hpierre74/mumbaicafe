@@ -1,0 +1,27 @@
+{
+  "rules": {
+    ".read": "true",
+    ".write": "auth !== null",
+    "booker": {
+      ".write": true,
+      "bookings":{
+        "$booking":{
+        ".validate": "newData.hasChildren(['email','name','tel','persons','time','date'])",
+        "email":{
+          ".validate":"newData.isString() && newData.val().contains('@') && newData.val().contains('.')"
+        },
+        "name":{
+          ".validate": "newData.isString() && newData.val().length >= 6 && newData.val().contains(' ')"
+        },
+        "tel":{
+          ".validate": "newData.isString() && newData.val().length >= 10 && newData.val().length <= 15"
+        },
+        "bookStamp":{
+          ".validate": "newData.val() < now"
+        }
+      }
+      }
+      
+    }
+  }
+}

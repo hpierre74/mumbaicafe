@@ -1,0 +1,7 @@
+**/node_mdules
+/build
+firekey.json
+database.rules.json
+/src/firebase.config.js
+/src/styles/
+firebase.config.js

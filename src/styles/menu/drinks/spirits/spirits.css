@@ -1,0 +1,5 @@
+.spirits {
+  display: flex;
+  flex-flow: column; }
+  .spirits > h2 {
+    margin: 2.5%; }

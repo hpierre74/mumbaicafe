@@ -1,0 +1,40 @@
+@import "styles/helpers.scss";
+
+.login {
+    border: 10px solid $ai;
+    box-shadow: white 0px 0px 1px 2px;
+    border-radius: 10px;
+    padding: 2.5%;
+    width: 50%;
+    background: white;
+    margin: 2.5% auto;
+    cursor: pointer;
+    color: black;
+    >form>fieldset {
+        display: flex;
+        flex-flow: column;
+        .inputParent{
+            display: flex;
+            flex-flow: row wrap;
+            @media (max-width: 599px) {
+                flex-flow: column;
+            }
+            >label,>input {
+                flex-grow: 1;
+                flex-basis: 0;
+                margin: 1% auto;
+                width: 50%;
+                @media (max-width: 599px) {
+                    width: 100%
+                }
+            }
+        }
+        .email {
+
+        }
+        .password {
+
+        }
+    }
+
+}

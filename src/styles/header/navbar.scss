@@ -1,0 +1,43 @@
+@import 'styles/helpers.scss';
+.fix-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 10%;
+
+    @media (max-width: 992px) {
+        width: 5%;
+    }
+}
+.nav {
+  
+}
+
+.nav-icons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    @media (max-width : 992px) {
+        flex-direction: row;
+    }
+}
+
+.nav-social-icon {
+    cursor: pointer;
+    align-self: center;
+    height: 50px;
+    width: 50px;
+    &.hover {
+        height:55px;
+        width: 55px;
+    }
+}
+
+.nav-social-links {
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.65rem;
+}

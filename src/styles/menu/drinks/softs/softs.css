@@ -1,0 +1,17 @@
+.softs > h2 {
+  margin: 2.5%; }
+
+.softs > ul {
+  list-style: none;
+  padding: 1%; }
+  .softs > ul li .soft {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between; }
+    .softs > ul li .soft .product {
+      width: 80%;
+      text-align: left;
+      margin-right: 1%; }
+    .softs > ul li .soft .price {
+      width: 20%;
+      text-align: right; }

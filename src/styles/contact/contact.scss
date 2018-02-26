@@ -1,0 +1,16 @@
+.contact {
+    padding-bottom:5%;
+    .contact-us {
+        padding-bottom:5%;
+        
+    }        
+    .gmap {
+        &>div {
+            &>div {
+                left:10%;
+                width: 90% !important;
+                max-height: 50%;
+            }
+        }
+    }
+}

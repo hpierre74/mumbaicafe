@@ -1,0 +1,12 @@
+.header {
+  margin: 2.5% 0 5%; }
+  @media (max-width: 993px) {
+    .header h1 {
+      padding: 1%; } }
+
+.logo {
+  width: 25%;
+  padding: 1%; }
+  @media (max-width: 993px) {
+    .logo {
+      width: 50%; } }

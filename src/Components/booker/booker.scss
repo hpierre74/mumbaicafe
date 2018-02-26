@@ -1,0 +1,72 @@
+.all-bookings-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/*BOOTSTRAP PANEL STYLE*/
+.panel {
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.panel-default {
+    border-color: #ddd;
+}
+.panel-default>.panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+.panel-booker {
+    border-color: #ffffff;
+}
+.panel-booker {
+    .panel-heading {
+        color: #fff;
+        background-color: transparent;
+        border-color: 1px border white;
+        }
+}
+.panel-primary {
+    border-color: #007bff;
+    background-color: white;
+    color: black
+}
+.panel-primary {
+    .panel-heading {
+        color: #fff;
+        background-color: #007bff;
+        border-color: 1px border #007bff;
+    }
+}
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.panel-body {
+    padding: 15px;
+}
+
+
+/*TABLE ROWS BACKGROUND ALTERNATE*/
+/* tbody>tr:nth-child(odd) {
+    background-color: #c4d1df;
+}
+tbody>tr:nth-child(even){
+    background-color:#f5f5f5;
+} */
+
+form>input {
+    text-align: center;
+}
+form select {
+    text-align: center;
+}
+
+
