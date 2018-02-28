@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import '../../styles/presentation/presentation.css';
 import AdminInterface from '../forms/AdminInterface.jsx';
+import Edit from '../admin/Edit';
 import { Container, Col, Row, Button, Collapse } from 'reactstrap';
-import JapanImg from '../../img/icons/torii-gate.svg';
-import JapanImg2 from '../../img/icons/geisha.svg';
-import JapanImg3 from '../../img/icons/japanese-chopsticks (1).svg';
 
 class Presentation extends Component {
     constructor(props) {
@@ -22,13 +20,15 @@ class Presentation extends Component {
         return (
             <Container className="presentation">
 
-                {/* <img src={JapanImg2} height='50px' width='50px' alt="geisha"/>
-                <img src={JapanImg} height='50px' width='50px' alt="torii gate"/>
-                <img src={JapanImg3} height='50px' width='50px' alt="baguettes"/> */}
-
                 {(this.props.presentation !==undefined)?  
                 <div>
                     <p>{this.props.presentation.concept}</p>
+                    <Edit 
+                        type='singleText'
+                        field='presentation'
+                        entry='concept'
+                        data={this.props.presentation.concept}
+                    />
                     {(this.props.isAdmin)?<AdminInterface
                         data={this.props.presentation.concept}
                         entry="concept"

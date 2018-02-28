@@ -6,8 +6,7 @@ class Edit extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            data:[],
-            hydrated:false
+            data:[]
         }
         this.setStateCallback = this.setStateCallback.bind(this);
     }
@@ -22,6 +21,12 @@ class Edit extends Component {
             prevState.data[key] = e.target.value
         });
     }
+
+    handleSingleTextState(e) {
+        e.persist();
+        this.setState({ data: e.target.value  });
+    }
+
     componentWillMount() {
         (this.state.data.name === undefined)?
             FirebaseService.Get(
@@ -32,18 +37,8 @@ class Edit extends Component {
             ;
     }
 
-    // componentWillReceiveProps(nextProps) {
-    //     this.setState({ 
-    //         data: nextProps.data,
-    //         hydrated:true
-    //     });
-    // }
-    componentDidUpdate(prevProps, prevState) {
-        console.log(this);
-    }
     update(e){
         e.preventDefault();
-        console.log(this);
         FirebaseService.Update(this.props.field, this.props.entry, this.state.data);
     }
 
@@ -173,8 +168,8 @@ class Edit extends Component {
             <FormGroup>
                 <Label htmlFor="name-input" />
                 <Input
-                value={this.state.data.name}
-                onChange={e => this.handleChange(e, "name")}
+                value={this.state.data}
+                onChange={e => this.handleSingleTextState(e)}
                 type="text"
                 />
             </FormGroup>

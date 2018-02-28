@@ -29,9 +29,9 @@ class NavAdmin extends Component {
     return (
       <div>
         <Navbar color="faded" dark >
-          {/* <NavbarBrand href="/">
+          <NavbarBrand href="/">
             <img src={logo} height='125px' width='200px' alt="logo"/>
-          </NavbarBrand> */}
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../../../styles/menu/drinks/softs/softs.css';
+import Edit from '../../../admin/Edit';
 
 
 
@@ -12,6 +13,13 @@ export const Softs = (props) => {
                     <div className="soft" key={index}>
                         <span className="product">{ soft.name }</span>
                         <span className="price">{ soft.price }</span>
+                    </div>
+                    <div>
+                        <Edit
+                            type="NamePrice"
+                            field='drinks/softs'
+                            entry={index}
+                            data={soft}/>
                     </div>
                 </li>
             )
