@@ -8,9 +8,10 @@ class FirebaseService {
     static GenerateNewDataKey(ref) {
         return db.ref().child(ref).push().key;
     }
-    static Get(ref) {
+    static Get(ref,callback) {
         return db.ref(ref).once('value')
         .then((snapshot) => {
+            callback('data', snapshot.val());
             return snapshot.val();
         })
         .catch(error => {

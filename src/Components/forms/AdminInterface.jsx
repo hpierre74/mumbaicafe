@@ -12,7 +12,7 @@ class AdminInterface extends Component {
         this.state = {
             edit:false,
             delete:false,
-            changes:[]
+            changes:props.data
         }
     }
     // componentWillReceiveProps(nextProps) {
@@ -30,23 +30,22 @@ class AdminInterface extends Component {
         
     }
     handleChange(e, key){
-        e.persist();
-        console.log(e, key, this.state);
-        
+        e.persist();        
         this.setState((prevState) => {
             prevState.changes[key] = e.target.value
         });
+        console.log(this.state);
     }
     update(e, field, id){
         e.preventDefault();
-        let changeItem = firebase.database().ref().child('/'+field);
-        //let changes = (this.state.changes!=='')?this.state.changes:changeItem[entry];
-        changeItem.update({
-            id:this.state.changes
+        firebase.database().ref(field).update({
+            [id]:this.state.changes
         });
         
     }
-    
+    componentWillReceiveProps(nextProps) {
+        this.setState({ changes: nextProps.data  });
+    }
 
     render() {
         return (
@@ -62,7 +61,7 @@ class AdminInterface extends Component {
                     <Edit
                         update={this.update.bind(this)}
                         handleChange={this.handleChange.bind(this)}
-                        data={this.props.data}
+                        data={this.state.data}
                         entry={this.props.entry}
                         field={this.props.field}
                         type={this.props.type}

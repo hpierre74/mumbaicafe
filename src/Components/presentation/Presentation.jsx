@@ -21,10 +21,10 @@ class Presentation extends Component {
     render() {
         return (
             <Container className="presentation">
+
                 {/* <img src={JapanImg2} height='50px' width='50px' alt="geisha"/>
                 <img src={JapanImg} height='50px' width='50px' alt="torii gate"/>
                 <img src={JapanImg3} height='50px' width='50px' alt="baguettes"/> */}
-
 
                 {(this.props.presentation !==undefined)?  
                 <div>
