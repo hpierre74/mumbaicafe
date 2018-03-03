@@ -23,7 +23,7 @@ firebase.config.js*
 
 
 # css
-/src/styles
+/src/styles/
 
 # development
 /src/Controllers/
