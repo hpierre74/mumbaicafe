@@ -1,11 +1,12 @@
 import React from 'react';
 import '../../../../styles/menu/drinks/softs/softs.css';
+import { Collapse } from 'reactstrap';
 import Edit from '../../../admin/Edit';
 
 
 
 export const Softs = (props) => {
-    const { data } = props;
+    const { data, active, isAdmin } = props;
     const renderSofts = () => {       
         return  Object.values(data).map((soft, index) => {
             return(
@@ -16,9 +17,10 @@ export const Softs = (props) => {
                     </div>
                     <div>
                         <Edit
+                            isAdmin={isAdmin}
                             type="NamePrice"
                             field='drinks/softs'
-                            entry={index}
+                            entry={index+1}
                             data={soft}/>
                     </div>
                 </li>
@@ -26,11 +28,11 @@ export const Softs = (props) => {
         })   
     }          
     return(
-        <div className="softs">
+        <Collapse isOpen={ active } className="softs">
             <h2>Softs</h2>
                 <ul>
                     { renderSofts() }
                 </ul> 
-        </div>
+        </Collapse>
     )   
 }

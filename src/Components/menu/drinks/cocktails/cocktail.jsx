@@ -5,9 +5,7 @@ import Edit from '../../../admin/Edit';
 
 export const Cocktail = (props) => {
     const { id, spiritUsed, cocktail, isAdmin } = props;
-    //console.log(isAdmin,spiritUsed)
     cocktail.id = id;
-    console.log(id);
     
 	return (
         
@@ -19,16 +17,8 @@ export const Cocktail = (props) => {
             <Edit 
                 field={'drinks/cocktails/'+spiritUsed}
                 type='NameDescriptionPrice'
-                entry={id}
+                entry={id+1}
                 data={cocktail}/>
-            {/* {(!isAdmin)?<AdminInterface
-                        data={cocktail}
-                        type='NameDescriptionPrice'
-                        entry={id}
-                        
-                        field={'drinks/cocktails/'+spiritUsed}
-                    />:''} */}
-                      
         </div>
     );
 };

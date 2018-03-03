@@ -6,6 +6,8 @@ import '../firebase.conf.js';
 import Login from '../Components/forms/login/login.jsx';
 import Logout from '../Components/forms/logout/logout.jsx';
 import Booker from '../Components/booker/Booker.jsx';
+import Main from './Main';
+//import Clients from '../Components/admin/Clients';
 
 
 class Admin extends Component {
@@ -52,7 +54,6 @@ class Admin extends Component {
 
 }
     render() { 
-        console.log(this.props.isAdmin)
         return ( 
             <Container>
                 {
@@ -62,7 +63,9 @@ class Admin extends Component {
                     <div>
                       <NavAdmin />
                       <Booker isAdmin={this.state.isAdmin}/>
+                      <Main isAdmin={this.state.isAdmin}/>
                       <Logout logout={this.logout.bind(this)}/>
+                      
                     </div>
                 }
             </Container>

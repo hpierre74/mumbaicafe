@@ -13,7 +13,7 @@ class Book extends Component {
     render() { 
         return ( 
             <Container>
-                <NavComponent />
+                <NavComponent active='book'/>
                 <Booker isAdmin={this.state.isAdmin} />
             </Container>
          )

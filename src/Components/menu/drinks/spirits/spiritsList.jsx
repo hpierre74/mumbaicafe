@@ -55,16 +55,18 @@ class SpiritsList extends Component {
 
         return(
             <div className="spirits-list">
-                
-                <h2 
-                    className={(this.state.collapse)? "active-list-title":"default-list-title"}
-                    onClick={ (e) => this.toggleSpiritList(e) }
-                     >{this.props.spiritUsed}
-                </h2>
-                <Collapse isOpen={this.state.collapse}>
-                {this.renderTemplateBySpirit()}
-                </Collapse>
-
+                {(this.props.data[this.props.spiritUsed] !==( undefined||null))?
+                <div>
+                    <h2 
+                        className={(this.state.collapse)? "active-list-title":"default-list-title"}
+                        onClick={ (e) => this.toggleSpiritList(e) }
+                        >{this.props.spiritUsed}
+                    </h2>
+                    <Collapse isOpen={this.state.collapse}>
+                    {(this.props.data[this.props.spiritUsed].name !== (undefined || null))?this.renderTemplateBySpirit():''}
+                    </Collapse>
+                </div>
+                :''}
 
             </div>
         );

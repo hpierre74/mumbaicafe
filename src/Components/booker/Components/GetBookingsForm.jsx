@@ -19,7 +19,7 @@ class GetBookingsForm extends Component {
         super(props);
         this.state = {
             requested_bookings: [],
-            date: moment(new Date()).format("DD-MM-YYYY"),
+            date: moment(new Date()).format('YYYY-MM-DD'),
             service: "",
             persons: {
                 all: "",
@@ -29,14 +29,6 @@ class GetBookingsForm extends Component {
             },
             week: []
         };
-    }
-
-    componentWillMount() {
-        !moment(moment(this.state.date).format()).isValid()
-            ? this.getBookingsByDate(this.state.date, this.state.service)
-            : () => {
-                  return;
-            };
     }
 
     _handleSubmit(e) {
@@ -61,13 +53,13 @@ class GetBookingsForm extends Component {
         let dinner2Amount = 0;
         Object.values(this.props.bookings).map((booking, index) => {
             if (booking.date === date) {
-                amount = amount + parseInt(booking.persons);
+                amount = amount + parseInt(booking.persons,10);
                 if (booking.service === "lunch") {
-                    lunchAmount = lunchAmount + parseInt(booking.persons);
+                    lunchAmount = lunchAmount + parseInt(booking.persons,10);
                 } else if (booking.service === "dinner-1") {
-                    dinner1Amount = dinner1Amount + parseInt(booking.persons);
+                    dinner1Amount = dinner1Amount + parseInt(booking.persons,10);
                 } else if (booking.service === "dinner-2") {
-                    dinner2Amount = dinner2Amount + parseInt(booking.persons);
+                    dinner2Amount = dinner2Amount + parseInt(booking.persons,10);
                 }
             }
         });
@@ -200,9 +192,10 @@ class GetBookingsForm extends Component {
                                 </div>
                             </Container>
                             <div>
+                                {(this.state.requested_bookings!== [])?
                                 <BookingsTable
                                     bookings={this.state.requested_bookings}
-                                />
+                                />:''}
                             </div>
                         </div>
                     </Col>

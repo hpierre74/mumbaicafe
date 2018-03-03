@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../img/logo.svg';
 import {
-    Container,
     Collapse,
     Navbar,
     NavbarToggler,
@@ -36,13 +35,13 @@ class NavAdmin extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink className='text-white' id='nav-link' to="/">Accueil</NavLink>
+                <NavLink  className={(this.props.active==='home')?'text-warning':'text-white'} id='nav-link' to="/">Accueil</NavLink>
               </NavItem>
+              {/* <NavItem>
+                <NavLink active={(this.props.active==='presse')?true:false} className='text-white' id='nav-link' to="/presse">Presse</NavLink>
+              </NavItem> */}
               <NavItem>
-                <NavLink className='text-white' id='nav-link' to="/presse">Presse</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className='text-white' id='nav-link' to="/book">Réserver</NavLink>
+                <NavLink className={(this.props.active==='book')?'text-warning':'text-white'} id='nav-link' to="/book">Réserver</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

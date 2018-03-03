@@ -1,10 +1,11 @@
 import React from 'react';
 import '../../../../styles/menu/drinks/beers/beers.css';
 import BeersList from './beersList.jsx';
+import { Collapse } from 'reactstrap';
 
 
 const Beers = (props) => {
-    const {data} = props;
+    const {data, active, isAdmin} = props;
     const renderBeersList = () => {
         return  Object.keys(data).map((beerUsed, index) => {
             return (
@@ -13,15 +14,16 @@ const Beers = (props) => {
                 key={index}
                 id={index}
                 beerUsed={beerUsed}
+                isAdmin={isAdmin}
                 />
             );
         });
     }
     return (
-        <div className='beers'>
+        <Collapse isOpen={ active } className='beers'>
             <h2>Beers</h2>
             { renderBeersList() }
-        </div>
+        </Collapse>
     );
 };
 

@@ -3,13 +3,24 @@ import '../../../styles/menu/food/meal.css';
 import thali  from '../../../img/food/thali.jpg';
 import Lunch from './lunch.jsx';
 import {Button} from 'reactstrap';
+import Edit from '../../admin/Edit';
 
 
 const Meal = (props) => {
     const { data, clientDevice } = props;
     const renderProducts = () => {
         return Object.values(data.dinner.thaly.products).map((product, index) => {
-            return (<li key={index}> { product } </li>)
+            return (
+            <li key={index}> 
+                <div> 
+                    { product } 
+                    <Edit 
+                        type='singletext'
+                        field='food/meal/dinner/thaly/products'
+                        entry={index}
+                        data={product}/>
+                </div> 
+            </li>)
         })
     }
     return (
@@ -18,6 +29,12 @@ const Meal = (props) => {
             <div className='thali'>
                 <h4>Le Thali</h4>
                 <p> {data.dinner.thaly.concept} </p>
+                <Edit 
+                    type='singletext'
+                    field='food/meal/dinner/thaly'
+                    entry='concept'
+                    data={data.dinner.thaly.concept}/>
+
                 <div className='thali-products'>
                     <ul className='thali-list'>
                         { renderProducts() }

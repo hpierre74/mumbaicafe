@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../../../styles/menu/drinks/cocktails/cocktail-list.css';
 import AdminInterface from '../../../forms/AdminInterface.jsx';
-
+import { Collapse } from 'reactstrap';
 import { Cocktail } from './cocktail.jsx';
 
 
@@ -13,9 +13,9 @@ class CocktailList extends Component {
     constructor(props){
         super(props);
         this.state = {
-            active:false
+            collapse:false
         }
-
+        this.toggleCocktailList = this.toggleCocktailList.bind(this);
     }
     
     
@@ -37,8 +37,8 @@ class CocktailList extends Component {
         });
     }
     toggleCocktailList(){
-        this.setState((prevState) => {
-        prevState.active = !prevState.active;
+        this.setState({
+            collapse: !this.state.collapse
         });
     }
     render() {
@@ -46,12 +46,17 @@ class CocktailList extends Component {
         return(
             <div className="cocktail-list">
                 <h2 
-                    className={(this.state.active)? "active-list":"default-list"}
+                    className={(this.state.collapse)? "default-list":"default-list"}
                     onClick={ (e) => this.toggleCocktailList(e) }
                      >{this.props.spiritUsed}
                 </h2>
+                <div>
+                 
+                <Collapse isOpen={this.state.collapse}>
+                { this.renderCocktails() }
+                </Collapse>
                 
-                { (this.state.active) ? this.renderCocktails() : '' }
+                </div>
 
             </div>
         );

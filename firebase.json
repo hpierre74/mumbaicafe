@@ -10,8 +10,7 @@
       "**/public/**",
       "**/node_modules/**",
       ".gitignore",
-      "debug.log",
-      "firekey.json"
+      "debug.log"
     ]
   }
 }

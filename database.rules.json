@@ -8,7 +8,7 @@
         "$booking":{
         ".validate": "newData.hasChildren(['email','name','tel','persons','time','date'])",
         "email":{
-          ".validate":"newData.isString() && newData.val().contains('@') && newData.val().contains('.')"
+          ".validate":"newData.isString()"
         },
         "name":{
           ".validate": "newData.isString() && newData.val().length >= 6 && newData.val().contains(' ')"

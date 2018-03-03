@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../../styles/presentation/presentation.css';
-import AdminInterface from '../forms/AdminInterface.jsx';
 import Edit from '../admin/Edit';
 import { Container, Col, Row, Button, Collapse } from 'reactstrap';
 
@@ -23,17 +22,13 @@ class Presentation extends Component {
                 {(this.props.presentation !==undefined)?  
                 <div>
                     <p>{this.props.presentation.concept}</p>
-                    <Edit 
+                    <Edit isAdmin={this.props.isAdmin}
                         type='singleText'
                         field='presentation'
                         entry='concept'
                         data={this.props.presentation.concept}
                     />
-                    {(this.props.isAdmin)?<AdminInterface
-                        data={this.props.presentation.concept}
-                        entry="concept"
-                        field="presentation"
-                    />:''}
+                    
                     <Button size="sm" outline onClick={this.toggle} style={{ marginBottom: '1rem' }}>En Savoir Plus</Button>
                     <Collapse isOpen={this.state.collapse}>
                         <Container>
@@ -42,27 +37,30 @@ class Presentation extends Component {
                                     <div>
                                         <div>
                                             <p>{this.props.presentation.food}</p>
-                                            {(this.props.isAdmin)?<AdminInterface
+                                            <Edit isAdmin={this.props.isAdmin}
+                                                type='singleText'
+                                                field='presentation'
+                                                entry='food'
                                                 data={this.props.presentation.food}
-                                                entry="food"
-                                                field="/presentation"
-                                            />    :''}                        
+                                            />                    
                                         </div>
                                         <div>
                                             <p>{this.props.presentation.tapas}</p>
-                                            {(this.props.isAdmin)?<AdminInterface
+                                            <Edit isAdmin={this.props.isAdmin}
+                                                type='singleText'
+                                                field='presentation'
+                                                entry='tapas'
                                                 data={this.props.presentation.tapas}
-                                                entry="tapas"
-                                                field="/presentation"
-                                            />:''}
+                                            />
                                         </div>
                                         <div>
                                             <p>{this.props.presentation.bar}</p>
-                                            {(this.props.isAdmin)?<AdminInterface
+                                            <Edit isAdmin={this.props.isAdmin}
+                                                type='singleText'
+                                                field='presentation'
+                                                entry='bar'
                                                 data={this.props.presentation.bar}
-                                                entry="bar"
-                                                field="/presentation"
-                                            />:''}
+                                            />
                                         </div>
                                     </div>                                    
                                 </Col>

@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, Label, Input, Button, Col } from "reactstrap";
+import { Form, FormGroup, Label, Input, Button, Col, Collapse } from "reactstrap";
 import FirebaseService from '../../Services/firebase.js';
 
 class Edit extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            data:[]
+            data:[],
+            active:false
         }
         this.setStateCallback = this.setStateCallback.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSingleTextState = this.handleSingleTextState.bind(this);
     }
 
+    componentWillMount() {
+        this.setState({ data: this.props.data  });
+    }
     setStateCallback(name,data) {
         this.setState({ [name]: data  });
+    }
+    
+    toggle(){
+        this.setState({ active: !this.state.active });
     }
 
     handleChange(e, key) {
@@ -25,23 +35,12 @@ class Edit extends Component {
     handleSingleTextState(e) {
         e.persist();
         this.setState({ data: e.target.value  });
-    }
-
-    componentWillMount() {
-        (this.state.data.name === undefined)?
-            FirebaseService.Get(
-                this.props.field +'/'+ this.props.entry,
-                this.setStateCallback)
-            :
-                ()=> {return;}
-            ;
-    }
+    } 
 
     update(e){
         e.preventDefault();
         FirebaseService.Update(this.props.field, this.props.entry, this.state.data);
     }
-
 
 
     makeFormMatchingEntries(type) {
@@ -52,7 +51,7 @@ class Edit extends Component {
             <FormGroup>
                 <Label htmlFor="name-input">Nom du Produit</Label>
                 <Input
-                value={this.state.data.name}
+                defaultValue={this.state.data.name}
                 onChange={e => this.handleChange(e, "name")}
                 type="text"
                 />
@@ -60,7 +59,7 @@ class Edit extends Component {
             <FormGroup>
                 <Label htmlFor="price-input">Prix du produit</Label>
                 <Input
-                value={this.state.data.price}
+                defaultValue={this.state.data.price}
                 onChange={e => this.handleChange(e, "price")}
                 type="text"
                 />
@@ -73,7 +72,7 @@ class Edit extends Component {
             <FormGroup>
                 <Label htmlFor="name-input">Nom du Produit</Label>
                 <Input
-                value={this.state.data.name}
+                defaultValue={this.state.data.name}
                 onChange={e => this.handleChange(e, "name")}
                 type="text"
                 />
@@ -81,7 +80,7 @@ class Edit extends Component {
             <FormGroup>
                 <Label htmlFor="price-input1">Prix n°1</Label>
                 <Input
-                value={this.state.data.price}
+                defaultValue={this.state.data.price1}
                 onChange={e => this.handleChange(e, "price1")}
                 type="text"
                 />
@@ -89,7 +88,7 @@ class Edit extends Component {
             <FormGroup>
                 <Label htmlFor="price-input2">Prix n°2</Label>
                 <Input
-                value={this.state.data.price}
+                defaultValue={this.state.data.price2}
                 onChange={e => this.handleChange(e, "price2")}
                 type="text"
                 />
@@ -100,9 +99,9 @@ class Edit extends Component {
         return (
             <Col>
             <FormGroup>
-                <Label htmlFor="name-input">Nom</Label>
+                <Label htmlFor="name-input">Nom du produit</Label>
                 <Input
-                value={this.state.data.name}
+                defaultValue={this.state.data.name}
                 onChange={e => this.handleChange(e, "name")}
                 type="text"
                 />
@@ -110,7 +109,7 @@ class Edit extends Component {
             <FormGroup>
                 <Label htmlFor="description-input">Description</Label>
                 <Input
-                value={this.state.data.description}
+                defaultValue={this.state.data.description}
                 onChange={e => this.handleChange(e, "description")}
                 type="text"
                 />
@@ -118,7 +117,7 @@ class Edit extends Component {
             <FormGroup>
                 <Label htmlFor="price-input">Prix</Label>
                 <Input
-                value={this.state.data.price}
+                defaultValue={this.state.data.price}
                 onChange={e => this.handleChange(e, "price")}
                 type="text"
                 />
@@ -129,9 +128,9 @@ class Edit extends Component {
         return (
             <Col>
             <FormGroup>
-                <Label htmlFor="name-input">Nom du Cocktail</Label>
+                <Label htmlFor="name-input">Nom du Produit</Label>
                 <Input
-                value={this.state.data.name}
+                defaultValue={this.state.data.name}
                 onChange={e => this.handleChange(e, "name")}
                 type="text"
                 />
@@ -139,7 +138,7 @@ class Edit extends Component {
             <FormGroup>
                 <Label htmlFor="description-input" />
                 <Input
-                value={this.state.data.description}
+                defaultValue={this.state.data.description}
                 onChange={e => this.handleChange(e, "description")}
                 type="text"
                 />
@@ -147,7 +146,7 @@ class Edit extends Component {
             <FormGroup>
                 <Label htmlFor="price-input1">Prix n°1</Label>
                 <Input
-                value={this.state.data.price1}
+                defaultValue={this.state.data.price1}
                 onChange={e => this.handleChange(e, "price1")}
                 type="text"
                 />
@@ -155,7 +154,7 @@ class Edit extends Component {
             <FormGroup>
                 <Label htmlFor="price-input1">Prix n°2</Label>
                 <Input
-                value={this.state.data.price2}
+                defaultValue={this.state.data.price2}
                 onChange={e => this.handleChange(e, "price2")}
                 type="text"
                 />
@@ -168,7 +167,7 @@ class Edit extends Component {
             <FormGroup>
                 <Label htmlFor="name-input" />
                 <Input
-                value={this.state.data}
+                defaultValue={this.state.data}
                 onChange={e => this.handleSingleTextState(e)}
                 type="text"
                 />
@@ -180,15 +179,33 @@ class Edit extends Component {
         break;
     
     };
+
 }
     render() {
         return (
-        <div>
-            <Form onSubmit={e => this.update(e, this.props.field, this.props.entry)}>
-                {this.makeFormMatchingEntries(this.props.type)}
-                <Button color="warning">Submit</Button>
-            </Form>
-        </div>
+            <div>
+                {(this.props.isAdmin && this.props.data.name)?
+                <div>
+                <Collapse className='clearfix' isOpen={!this.state.active}>
+                    <Button 
+                        className='float-right'
+                        onClick={this.toggle.bind(this)}
+                        color='light' size='sm'
+                        >
+                        Edit
+                    </Button>
+                </Collapse>
+                <Collapse className='clearfix' isOpen={this.state.active}>
+                    <Form onSubmit={e => this.update(e, this.props.field, this.props.entry)}>
+                        {(this.state.data !==[])?this.makeFormMatchingEntries(this.props.type):''}
+                        <Button color="warning">Enregistrer les modifications</Button>
+                    </Form>
+                    <Button className='float-right' onClick={this.toggle.bind(this)} color='light' size='sm'>Close Edit</Button>
+                </Collapse>
+                </div>
+                :''}
+    
+            </div>
         );
     };
 }

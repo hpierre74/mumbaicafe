@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../img/logo.svg';
 import {
-    Container,
     Collapse,
     Navbar,
     NavbarToggler,
@@ -38,15 +37,15 @@ class NavAdmin extends Component {
               <NavItem>
                 <NavLink id='nav-link' to="/">Accueil Client</NavLink>
               </NavItem>
-              <NavItem>
+              {/* <NavItem>
                 <NavLink id='nav-link' to="/menu">Menu</NavLink>
-              </NavItem>
-              <NavItem>
+              </NavItem> */}
+              {/* <NavItem>
                 <NavLink id='nav-link' to="/contact">Contacts</NavLink>
-              </NavItem>
-              <NavItem>
+              </NavItem> */}
+              {/* <NavItem>
                 <NavLink id='nav-link' to="/booker">Réservations</NavLink>
-              </NavItem>
+              </NavItem> */}
             </Nav>
           </Collapse>
         </Navbar>

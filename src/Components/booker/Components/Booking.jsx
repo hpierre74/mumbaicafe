@@ -2,6 +2,7 @@ import React from 'react'
 
 const Booking = (props) => {
     const { arrived, booking, index } = props;
+    
         return (
             <tr key={index}>
                 <th scope="row">{index+1}</th>

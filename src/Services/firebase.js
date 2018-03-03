@@ -8,10 +8,10 @@ class FirebaseService {
     static GenerateNewDataKey(ref) {
         return db.ref().child(ref).push().key;
     }
-    static Get(ref,callback) {
+    static Get(ref, callback) {
         return db.ref(ref).once('value')
         .then((snapshot) => {
-            callback('data', snapshot.val());
+            callback('data', snapshot.val())
             return snapshot.val();
         })
         .catch(error => {
@@ -19,12 +19,10 @@ class FirebaseService {
         })
         
     }
-    static Update(ref, key, newData, callback) {
+    static Update(ref, key, newData) {
         return db.ref(ref).update({[key]: newData})
         .then(success => {
-            console.log(success);
-            callback();
-            
+            //console.log('updated');
         })
         .catch(error => {
             console.log(error);
@@ -33,7 +31,7 @@ class FirebaseService {
     static Delete(ref) {
         return db.ref(ref).remove()
         .then(success => {
-            console.log(success);
+            //console.log(success);
         })
         .catch(error => {
             console.log(error);
