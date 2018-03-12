@@ -25,6 +25,8 @@ database.rules.json*
 
 # css
 /src/styles/
+ # assets
+ /src/assets
 
 
 
