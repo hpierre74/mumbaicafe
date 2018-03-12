@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import '../../styles/header/navbar.css';
 import {Popover, PopoverHeader, PopoverBody} from 'reactstrap';
 //import NavItem from './NavItem.jsx';
-//import logo from "../../img/logo.svg";
-import iconFB from "../../img/social/facebook-logo.svg";
-import iconInsta from "../../img/social/instagram-logo.svg";
-import iconPhone from "../../img/social/phone-logo.svg";
-import foodora from "../../img/social/foodora-logo.svg";
+//import logo from "../../assets/img/logo.svg";
+import iconFB from "../../assets/img/social/facebook-logo.svg";
+import iconInsta from "../../assets/img/social/instagram-logo.svg";
+import iconPhone from "../../assets/img/social/phone-logo.svg";
+import foodora from "../../assets/img/social/foodora-logo.svg";
 
 class NavBarEl extends Component {
     constructor(props) {

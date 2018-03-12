@@ -2,8 +2,11 @@
   "rules": {
     ".read": "true",
     ".write": "auth !== null",
+    "bookerV2": {
+      ".write" : "true"
+    },
     "booker": {
-      ".write": true,
+      ".write": "false",
       "bookings":{
         "$booking":{
         ".validate": "newData.hasChildren(['email','name','tel','persons','time','date'])",

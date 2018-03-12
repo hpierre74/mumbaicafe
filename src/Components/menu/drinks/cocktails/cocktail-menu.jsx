@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { 
     Row,
     Col,
     Card,
-    CardHeader, 
     CardText, 
     CardBody, 
     CardTitle, 
     CardSubtitle, 
-    Button,
     Collapse
 } from 'reactstrap';
 import Edit from '../../../admin/Edit';

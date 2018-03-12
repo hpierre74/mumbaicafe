@@ -5,9 +5,9 @@ import {
   CarouselControl,
   CarouselIndicators
 } from 'reactstrap';
-import lunch1 from "../../../img/food/lunch1.jpg";
-import lunch2 from "../../../img/food/lunch2.jpg";
-import lunch3 from "../../../img/food/lunch3.jpg";
+import lunch1 from "../../../assets/img/food/lunch1.jpg";
+import lunch2 from "../../../assets/img/food/lunch2.jpg";
+import lunch3 from "../../../assets/img/food/lunch3.jpg";
 
 const items = [
   {

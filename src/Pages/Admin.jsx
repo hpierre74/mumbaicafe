@@ -5,7 +5,9 @@ import * as firebase from 'firebase';
 import '../firebase.conf.js';
 import Login from '../Components/forms/login/login.jsx';
 import Logout from '../Components/forms/logout/logout.jsx';
-import Booker from '../Components/booker/Booker.jsx';
+import BookerV2 from '../Components/booker/BookerV2.jsx';
+import BookingManager from '../Components/admin/BookingManager';
+import BookerForm from '../Components/booker/BookerForm';
 import Main from './Main';
 //import Clients from '../Components/admin/Clients';
 
@@ -62,7 +64,11 @@ class Admin extends Component {
                     :
                     <div>
                       <NavAdmin />
-                      <Booker isAdmin={this.state.isAdmin}/>
+                      {/* <Booker isAdmin={this.state.isAdmin}/> */}
+                      <BookerV2>
+                        <BookingManager />
+                        <BookerForm />
+                      </BookerV2>
                       <Main isAdmin={this.state.isAdmin}/>
                       <Logout logout={this.logout.bind(this)}/>
                       

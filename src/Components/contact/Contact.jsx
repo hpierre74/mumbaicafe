@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../styles/contact/contact.css';
 //import GoogleApiWrapper from './SimpleMap.jsx';
-import map from '../../img/mumbaimap.png';
+import map from '../../assets/img/mumbaimap.png';
 import { Container, Col, Row } from 'reactstrap';
 
 class Contact extends Component {

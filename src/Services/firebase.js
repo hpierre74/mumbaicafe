@@ -1,44 +1,62 @@
 import * as firebase from 'firebase';
-import '../firebase.conf.js';
+import '../firebase.conf';
 
 
 const db = firebase.database();
 
-class FirebaseService {
-    static GenerateNewDataKey(ref) {
-        return db.ref().child(ref).push().key;
-    }
-    static Get(ref, callback) {
-        return db.ref(ref).once('value')
-        .then((snapshot) => {
-            callback('data', snapshot.val())
-            return snapshot.val();
-        })
-        .catch(error => {
-            console.log(error);
-        })
-        
-    }
-    static Update(ref, key, newData) {
-        return db.ref(ref).update({[key]: newData})
-        .then(success => {
-            //console.log('updated');
-        })
-        .catch(error => {
-            console.log(error);
-        })
-    }
-    static Delete(ref) {
-        return db.ref(ref).remove()
-        .then(success => {
-            //console.log(success);
-        })
-        .catch(error => {
-            console.log(error);
-        })
-    }
+class Firebase {
+  static DB() {
+    return db;
+  }
+
+  // static isLogged() {
+  //   firebase.auth().onAuthStateChanged((user) => {
+  //     if (user) {
+  //       console.log('user is signed', user);
+  //     } else {
+  //       console.log('user is not');      
+  //     }
+  //   });
+  // }
+  static Get(ref) {
+    return db.ref(ref).once('value')
+    .then(snapshot => {
+      return snapshot.val();
+    })
+    .catch(error => {
+      console.log(error, 'get failed');
+      return error;
+    })
+  }
+
+  static getNewKey(ref) {
+    return db.ref(ref).push().key;
+  }
+
+  static Update(ref, data) {
+    return db.ref(ref).update(data)
+    .then(success => {
+      //console.log('updated');
+      return data;
+    })
+    .catch(error => {
+      //console.log('failed update');
+      return error;
+    })
+  }
+
+  static Delete(ref) {
+    return db.ref(ref).remove()
+    .then(success => {
+      //console.log('success');
+      return success;
+    })
+    .catch(error => {
+      //console.log(error, 'failed remove');
+      return error;
+    })
+  }
 
 }
-
-export default FirebaseService;
+export default Firebase;
 

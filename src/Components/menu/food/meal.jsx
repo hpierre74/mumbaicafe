@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../styles/menu/food/meal.css';
-import thali  from '../../../img/food/thali.jpg';
+import thali  from '../../../assets/img/food/thali.jpg';
 import Lunch from './lunch.jsx';
 import {Button} from 'reactstrap';
 import Edit from '../../admin/Edit';

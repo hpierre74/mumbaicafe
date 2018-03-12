@@ -18,8 +18,10 @@ import Beers from '../Components/menu/drinks/beers/beers.jsx';
 import {Softs} from '../Components/menu/drinks/softs/softs.jsx';
 //import Spirits from '../Components/menu/drinks/spirits/spirits.jsx';
 import {Wines} from '../Components/menu/drinks/wines/wines.jsx';
+import BookerV2 from '../Components/booker/BookerV2.jsx';
+import BookerForm from '../Components/booker/BookerForm';
 import Footer from '../Components/footer/footer.jsx';
-import Booker from '../Components/booker/Booker.jsx';
+
 const defaultState = {
     drinks:{
       cocktailMenu:[],
@@ -113,11 +115,6 @@ class Main extends Component {
               active={ (this.state.active.drinks === 'cocktails')?true:false }
 
             />);
-          // case 'spirits': return(
-          //   <Spirits 
-          //     data={this.state.data.drinks.spirits}
-          //     isAdmin={this.props.isAdmin}
-          //   />);
           case 'beers': return(
             <Beers 
               isAdmin={this.props.isAdmin}
@@ -155,6 +152,13 @@ class Main extends Component {
         return ( 
             <Container>
                 <Header clientDevice={ this.clientDevice } isAdmin={this.props.isAdmin}/>
+                <Container fluid>
+                  <div id='aristo-title'>
+                    <h5 >Notre Bartender Jimmy Cassar en finale mondiale Bacardi</h5>
+                    <small id='aristo-text'>Venez l'encourager et découvrir son cocktail "L'Aristocrate" au Mumbai Café</small>
+                  </div>
+                  <iframe title='aristocrate vidéo' id='aristo-video' width={window.innerWidth>1000? 840 : 374} height={window.innerWidth>1000? 472.5 : 210} src="https://www.youtube.com/embed/-ePDn47XY_0?rel=0" frameBorder="0" allowFullScreen></iframe>
+                </Container>
                 <Presentation 
                     clientDevice={ this.clientDevice }
                     pathToPresentation={firebase.database().ref('presentation')} 
@@ -169,25 +173,24 @@ class Main extends Component {
                     activeMenu={this.state.active.menu}
                     isAdmin={this.props.isAdmin}
                 >
-                    {/* {
-                    (this.state.active.menu==="food")? */}
+                 
                       <Collapse isOpen={ (this.state.active.menu==="food")?true:false }>
                         <Food isAdmin={this.props.isAdmin} path={firebase.database().ref('food')}  active={this.state.active.food} _toggleActive={this.toggleActive.bind(this)}>
                         {(this.state.data.food!==null)?this.renderFoodChild():''}
                         </Food>
                       </Collapse>
-                    {/* : */}
+                  
                       <Collapse isOpen={ (this.state.active.menu==="drinks")?true:false }>
                         <Drinks isAdmin={this.props.isAdmin} path={firebase.database().ref('drinks')} active={this.state.active.drinks} _toggleActive={this.toggleActive}>
                         {(this.state.data.drinks!==null)?this.renderDrinksChild():''}
                         </Drinks>
                       </Collapse>
-                    {/* } */}
+                    
                 </Menu>
-                {/* <Button outline color='success'>
-                    <NavLink to='/book' >Réserver une table</NavLink>
-                </Button> */}
-                {this.props.isAdmin?'':<Booker isAdmin={this.props.isAdmin}/>}
+                
+                <BookerV2>
+                  <BookerForm />
+                </BookerV2>
                 <Footer />                  
             </Container>
 

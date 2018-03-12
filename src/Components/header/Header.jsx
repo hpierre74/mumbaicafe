@@ -1,7 +1,7 @@
 import React,{ Component } from 'react';
 import '../../styles/header/header.css';
 import NavBarEl from './NavBarEl.jsx';
-import logo  from '../../img/logo.svg';
+import logo  from '../../assets/img/logo.svg';
 
 
 
