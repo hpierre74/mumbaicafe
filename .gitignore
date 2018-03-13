@@ -20,15 +20,15 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 firebase.conf.js*
-/src/firebase.conf.js*
+src/firebase.conf.js*
 database.rules.json*
 package-lock.json*
 
 
 # css
-/src/styles/
+src/styles/**
 # assets
- /src/assets
+src/assets/**
 
 
 

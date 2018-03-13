@@ -1,0 +1,77 @@
+[33mcommit 9ee96238148c468e3689b244b4f4b100215560c8[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31mold-origin/master[m[33m)[m
+Author: Pierre Huyghe <pierrehuyghe.pro@gmail.com>
+Date:   Tue Mar 13 01:25:53 2018 +0100
+
+    gitignore update
+
+[33mcommit 5d107a4168b4c26b221c02f37ed88e26842f50d3[m
+Author: Pierre Huyghe <pierrehuyghe.pro@gmail.com>
+Date:   Tue Mar 13 01:22:00 2018 +0100
+
+    rm old files
+
+[33mcommit 8e897e11e61c9edb106603c68ca2c06c5aafe901[m
+Author: Pierre Huyghe <pierrehuyghe.pro@gmail.com>
+Date:   Tue Mar 13 00:40:55 2018 +0100
+
+    update to MUI
+
+[33mcommit 78d2255348df4c6ef62fbf1ea1a319e1fd9040fa[m
+Author: Pierre Huyghe <pierrehuyghe.pro@gmail.com>
+Date:   Tue Mar 13 00:39:51 2018 +0100
+
+    Update to MaterialUI
+
+[33mcommit bff9fd33eaa9344e5b99c652d725b0f212189954[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Pierre Huyghe <pierrehuyghe.pro@gmail.com>
+Date:   Sat Mar 3 15:50:15 2018 +0100
+
+    remove ignored files
+
+[33mcommit 4a639ea43781e530620f17e1fc58fd00e2a99f5e[m
+Author: Pierre Huyghe <pierrehuyghe.pro@gmail.com>
+Date:   Sat Mar 3 15:27:58 2018 +0100
+
+    git ignore
+
+[33mcommit 53429853ad16b227a1cb0852c2415f1c98bea4d2[m
+Author: Pierre Huyghe <pierrehuyghe.pro@gmail.com>
+Date:   Sat Mar 3 07:30:32 2018 +0100
+
+    first commit
+
+[33mcommit de6e74a9cf09584e4dc2e9b5b4bc71e2c540d552[m
+Author: hpierre74 <pierrehuyghe.pro@gmail.com>
+Date:   Wed Feb 28 02:59:37 2018 +0100
+
+    presentation edit, single text fix
+
+[33mcommit 8c20dade6ecba3fbb6761e3a711488b2c0e255b9[m
+Author: hpierre74 <pierrehuyghe.pro@gmail.com>
+Date:   Wed Feb 28 02:22:44 2018 +0100
+
+    ignore !
+
+[33mcommit d1c0cf541566cc715196b900bc9c314c2c5aab52[m
+Author: hpierre74 <pierrehuyghe.pro@gmail.com>
+Date:   Tue Feb 27 12:55:27 2018 +0100
+
+    gitignore fix
+
+[33mcommit 37dd477c0659b775a8ea0d3547f4a9380a13abe8[m
+Author: hpierre74 <pierrehuyghe.pro@gmail.com>
+Date:   Mon Feb 26 16:29:30 2018 +0100
+
+    gitignore 2
+
+[33mcommit 4d5458b2a52782e53b71903c572b4ea0defb84b1[m
+Author: hpierre74 <pierrehuyghe.pro@gmail.com>
+Date:   Mon Feb 26 16:28:31 2018 +0100
+
+    gitignore
+
+[33mcommit 11156bc21b1827f40baa1360d2a80a3cc2d3dba9[m
+Author: hpierre74 <pierrehuyghe.pro@gmail.com>
+Date:   Mon Feb 26 16:25:11 2018 +0100
+
+    first commit
